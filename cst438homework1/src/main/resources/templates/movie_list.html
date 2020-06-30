@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+    <title>Movie List</title>
+</head>
+<body>
+	<a href="/movies/new">Add a Movie</a>
+	<br/>
+	<table>
+		<tr>
+			<th>User</th>
+			<th>Movie Title</th>
+			<th>Movie Rating</th>
+			<th>Movie Review</th>
+			<th>Date Posted</th>
+		</tr>
+		<tr th:each="movie : ${movies}">
+			<td th:text="${movie.user}"></td>
+			<td th:text="${movie.movieTitle}"></td>
+			<td th:text="${movie.movieRating}"></td>
+			<td th:text="${movie.movieReview}"></td>
+			<td th:text="${movie.timeAndDate}"></td>
+		</tr>
+	</table>
+</body>
+</html>
